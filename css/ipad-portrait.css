@@ -1,0 +1,36 @@
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+        nav .mainMenu {
+            width: 100vw;
+        }
+        .hero-section-right {
+            display: none;
+        }
+        .hero-section-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-section-btn{
+            margin-right: 5%;
+            width: 100%;
+        }
+        .personal-image {
+            display:none;
+        }
+        .mobile-personal-image {
+            display: flex;
+            border-radius: 500px;
+            margin-bottom: 5%;
+        }
+        .project-image {
+            display: none;
+        }
+        .about-me-content {
+            height: 55vh;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-content: center;
+        }
+ }
