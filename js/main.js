@@ -1,6 +1,19 @@
+// Menu functions
 const mainMenu = document.querySelector('.mainMenu');
 const closeMenu = document.querySelector('.closeMenu');
 const openMenu = document.querySelector('.openMenu');
+
+function show(){
+    mainMenu.style.display = 'flex';
+    mainMenu.style.left = '1';
+}
+function close(){
+    mainMenu.style.display = 'none';
+}
+
+openMenu.addEventListener('click', show);
+closeMenu.addEventListener('click', close);
+// Projects sections functions
 window.onload = () => {
     const tab_switchers = document.querySelectorAll('[data-switcher]');
 
@@ -27,64 +40,13 @@ function SwitchPage (page_id) {
     next_page.classList.add('is-active');
 }
 
-openMenu.addEventListener('click', show);
-closeMenu.addEventListener('click', close);
-function show(){
-    mainMenu.style.display = 'flex';
-    mainMenu.style.top = '0';
-}
-function close(){
-    mainMenu.style.top = '-100%';
-}
-
-
-// Animation Starts Here
-// Page animation starts 
-// const header = document.querySelector('header');
-// const loadingPage = () => {
-//     anime({
-//         width: '20%'
-//         targett: 'header',
-//         easing: 'spring(1, 80, 10, 0)'
-//       })
-// }
-// window.addEventListener('load', loadingPage);
-
-
 // page transition animation.
-
 // View resume hover animation animation
-const view_resume_button = document.querySelector('.view-resume');
-const mouseHoverAnimation = () => {
-    anime({
-        targets: view_resume_button,
-        width: '40%',
-        scale: {
-            delay: 800,
-            value: 1
-        },
-        duration: 1
-    });
-}
-const mouseOutAnimation = () => {
-    anime({
-        targets: view_resume_button,
-        width: '30%',
-        scale: {
-            delay: 800,
-            value: 1
-        },
-        duration: 800
-    });
-}
-view_resume_button.addEventListener('mouseover', mouseHoverAnimation);
-view_resume_button.addEventListener('mouseout', mouseOutAnimation);
-// Projects button animations
 const button = document.querySelector('.button');
-const mouseHoverAnimationProjectsButton = () => {
+function mouseHoverAnimation(){
     anime({
         targets: button,
-        width: '40%',
+        width: '25%',
         scale: {
             delay: 800,
             value: 1
@@ -92,10 +54,10 @@ const mouseHoverAnimationProjectsButton = () => {
         duration: 1
     });
 }
-const mouseOutAnimationProjectButton = () => {
+function mouseOutAnimation(){
     anime({
         targets: button,
-        width: '30%',
+        width: '20%',
         scale: {
         delay: 800,
         value: 1
@@ -103,5 +65,32 @@ const mouseOutAnimationProjectButton = () => {
         duration: 800
     });
 }
-button.addEventListener('mouseover', mouseHoverAnimationProjectsButton);
-button.addEventListener('mouseout', mouseOutAnimationProjectButton);
+button.addEventListener('mouseover', mouseHoverAnimation);
+button.addEventListener('mouseout', mouseOutAnimation);
+// View resume hover animation
+const view_resume_button = document.querySelector('.view-resume');
+
+function mouseHoverAnimationVeiwResume(){
+    anime({
+        targets:  view_resume_button,
+        width: '25%',
+        scale: {
+            delay: 800,
+            value: 1
+        },
+        duration: 1
+    });
+}
+function mouseOutAnimationVeiwResume(){
+    anime({
+        targets: view_resume_button,
+        width: '20%',
+        scale: {
+        delay: 800,
+        value: 1
+        },
+        duration: 800
+    });
+}
+view_resume_button.addEventListener('mouseover', mouseHoverAnimationVeiwResume);
+view_resume_button.addEventListener('mouseout', mouseOutAnimationVeiwResume);
